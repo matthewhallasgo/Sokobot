@@ -112,7 +112,8 @@ class PuzzleSolver {
         int player = encode(playerRow, playerCol);
 
         State start = new State(player, crates, null, '\0', 0, heuristic(player, crates));
-        PriorityQueue<State> openSet = new PriorityQueue<>(Comparator.comparingInt(State::fCost).thenComparingInt(s -> s.hCost));
+        // added more tiebreaker
+        PriorityQueue<State> openSet = new PriorityQueue<>(Comparator.comparingInt(State::fCost).thenComparingInt(s -> s.hCost)); 
         HashSet<State> visited = new HashSet<>();
 
         openSet.add(start);
