@@ -340,7 +340,7 @@ class State {
     }
 
     public int fCost() {
-        return gCost + 10*hCost; // added weight 10 to hCost
+        return gCost + 5 * hCost; // added weight 10 to hCost
     }
 
     public String reconstructPath() {
